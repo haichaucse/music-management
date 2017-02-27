@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.chaunguyen.domain.Item;
 
 @RestController
-@RequestMapping("/item")
+@RequestMapping("/items")
 public class ItemController extends CRUDController<Item> {
 	@Autowired
 	@Override

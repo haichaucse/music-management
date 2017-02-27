@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.chaunguyen.domain.Category;
 
-@RequestMapping("/category")
+@RequestMapping("/categories")
 @RestController
 public class CategoryController extends CRUDController<Category> {
 	@Override

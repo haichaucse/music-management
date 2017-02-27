@@ -7,9 +7,6 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -17,7 +14,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-public class Category implements Serializable {
+public class Category extends BaseEntity implements Serializable {
 
 	/**
 	 * 
@@ -33,17 +30,6 @@ public class Category implements Serializable {
 	
 	protected Category() {
 		//required by JPA
-	}
-	
-	private Integer id;
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
 	}
 	
 	public String getName() {

@@ -3,9 +3,6 @@ package com.chaunguyen.domain;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
@@ -15,7 +12,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-public class Item implements Serializable {
+public class Item extends BaseEntity implements Serializable {
 	
 	/**
 	 * 
@@ -37,16 +34,6 @@ public class Item implements Serializable {
 
 	protected Item() {
 		//required by JPA
-	}
-	private Integer id;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
 	}
 	
 	public String getName() {
